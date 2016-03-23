@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<script type="text/javascript">
+function werteliste (anker) {
+  if (anker == '') return;
+  var wertestring = anker.slice(1);
+  var paare = wertestring.split("&");
+  var paar, name, wert;
+  for (var i = 0; i < paare.length; i++) {
+    paar = paare[i].split("=");
+    name = paar[0];
+    wert = paar[1];
+    name = unescape(name).replace("+", " ");
+    wert = unescape(wert).replace("+", " ");
+    this[name] = wert;
+  }
+}
+var liste = new werteliste(location.hash);
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write(liste["access_token"]);
+window.prompt("In die Zwischenablage kopieren: Strg+C, Enter", liste["access_token"]);
+</script>
+</body>
+</html>
