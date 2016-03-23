@@ -1,8 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!--source: http://aktuell.de.selfhtml.org/artikel/javascript/wertuebergabe/ -->
 <html>
 <head>
 <script type="text/javascript">
-function werteliste (anker) {
+function Werteliste (anker) {
   if (anker == '') return;
   var wertestring = anker.slice(1);
   var paare = wertestring.split("&");
@@ -16,7 +17,7 @@ function werteliste (anker) {
     this[name] = wert;
   }
 }
-var liste = new werteliste(location.hash);
+var liste = new Werteliste(location.hash);
 </script>
 </head>
 <body>
