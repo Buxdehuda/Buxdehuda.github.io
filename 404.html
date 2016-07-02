@@ -1,0 +1,12 @@
+---
+permalink: /404.html
+---
+<p id="text">Waiting for Javascript</p>
+<script>
+    var seconds = 0;
+    function write(){
+		seconds++;
+		document.getElementById("text").innerHTML = "Time wasted: " + seconds + "s";
+    }
+	setInterval(write, 1000);
+</script>
